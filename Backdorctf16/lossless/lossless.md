@@ -2,6 +2,7 @@ Author Rodbert(Robert Tomkowski)
 
 # Task: Lossless
 CTF: Backdoorctf16  
+Link: https://backdoor.sdslabs.co/challenges/CLUE  
 Author: Arpit Singla  
 Points: 100  
 Category: Stegano  
@@ -40,7 +41,7 @@ Picture is size 49x7 and has black pixels on top, for me it looks like vertical 
 Let’s try that idea.  
 In this point we could decrypt it by hand in like 5 min, but we are lazy, aren’t we?  
 I turned our encrypted cleaned flag by 90 counter-clockwise and exported it as bmp encoded with 3 bytes.  
-Next we open this image in hex editor, copy image body, paste it to your favorite shell, replace all ‘00 00 00’ by ‘1‘ and ‘ff ff ff’ by ‘0’ and at the end remove spaces. After that if we want to use some built in magick functions that changes binary to ascii we need to add leading zeros to every group of seven.
+Next we open this image in hex editor, copy image body, paste it to your favorite shell, replace all ‘00 00 00’ by ‘1‘ and ‘ff ff ff’ by ‘0’ and at the end remove spaces. After that if we want to use some built in magic functions that changes binary to ascii, we need to add leading zeros to every group of seven.
 
 Handy implementation in python 2.7:
 ```python
