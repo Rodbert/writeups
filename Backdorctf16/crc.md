@@ -7,7 +7,7 @@ Author: IamLupo
 Points: 250  
 Category: Misc  
 Description:
-Backdoor user IamLupo wanted to submit his challenge for BackdoorCTF16 but he was struck by lightening and his challenge file shattered into 26 pieces. We want you to recover it for us (and maybe get the flag while you do it). Thanks in advance! Here is the zipped file:
+>Backdoor user IamLupo wanted to submit his challenge for BackdoorCTF16 but he was struck by lightening and his challenge file shattered into 26 pieces. We want you to recover it for us (and maybe get the flag while you do it). Thanks in advance! Here is the zipped file:
 http://hack.bckdr.in/CRC/challenge.zip
 
 ###TL;DR
