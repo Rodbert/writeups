@@ -1,7 +1,7 @@
-# CRC
+Author Pymac(Maciej Pytel)
 
----
-Task: CRC  
+# Task: CRC
+
 CTF: Backdoorctf16  
 Author: IamLupo  
 Points: 250  
@@ -10,16 +10,15 @@ Description:
 Backdoor user IamLupo wanted to submit his challenge for BackdoorCTF16 but he was struck by lightening and his challenge file shattered into 26 pieces. We want you to recover it for us (and maybe get the flag while you do it). Thanks in advance! Here is the zipped file:
 http://hack.bckdr.in/CRC/challenge.zip
 
----
+###TL;DR
 
-TLDR;  
 27 encrypted zip archives, each contains 5 character txt file. All files
 together make a php program. CRC32 checksum can be retrieved from zip archives.
 Brute force is reasonable, but takes a long time (too long).
 Use knowledge of php and already decrypted text to guess some characters in
 encrypted archives to speed up brute force attack.
 
----
+###Solution
 
 In this task we get a zip file (challenge.zip) and we need to somehow get a
 flag out of it. The archive extracts to 27 separate .zip files, named 0.zip
