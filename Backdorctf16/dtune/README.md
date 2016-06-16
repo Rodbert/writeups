@@ -1,4 +1,4 @@
-Author doubleloop(Jakub Łuczyński)
+Author: doubleloop (Jakub Łuczyński)
 
 # Task: dTune
 
@@ -37,9 +37,7 @@ numbers = [8, 4, 3, 0, 3, 5, 2, 4, 0, 4, 7, 7, 0, 7, 4, 4, 2, 2,
 
 Now the question was how to retrieve SHA from this.. From the clue we know the message consists of capital letters. One of our first idea was the coding of the cell phone keyboard. Remember those times before smart-phones when you typed SMS by pressing digits multiple times? Using some simple image from Internet like:
 
-<p align="center">
 ![Image of phone keyboard](http://www.yorku.ca/mack/chapter5-f2.jpg)
-</p>
 
 we could write simple mapping:
 
@@ -57,29 +55,29 @@ string_map = {
 }
 ```
 
-Still there was one problem. By listening to the sound we could clearly distinguish that the tones are grouped. Small intervals where separating the same tone (so it had to be repetition of one digit), and . I was not sure how this on-line tool treated the sounds so I opened the file in audacity and counted chunks (manually).
+Still there was one problem. By listening to the sound we could clearly distinguish that the tones are grouped. Small intervals where separating the same tone (so it had to be repetition of one digit). I was not sure how the on-line tool treated the repeated sounds so I opened the file in Audacity and counted chunks (manually).
 
 ![Audacious screenshot 1](img1.png)
 
 
-There were 34 vs 36 that I got from the on-line tool.. Hmm, it probably required sounds to be in the same delays and it messed up on our sample. So what I did was manually remove all repetitions in audacity (manual select/remove) and write down how many was them. I got modified file:
+There were 34 vs 36 that I got from the on-line tool.. Hmm, it probably required tones to be in the same intervals and it failed on our sample. So I manually removed all repetitions using Audacity (manual select/remove) and also note down number of repetitions of each sound. I got modified file:
 
 ![Audacious screenshot 1](img2.png)
 [Updated wav file](dtune1.wav)
 
-and number of repetitions:
+and numbers of repetitions:
 ```python
 rep = [1, 2, 2, 1, 3, 3, 1, 1, 1, 3, 4, 1, 4, 2, 1, 1, 1, 1, 1, 3, 3,
        *, *, *, *, *, *, *, *, *, *, *, *, *]
 ```
 
-after uploading modified file i got new array of numbers:
+After uploading modified file i got new array of numbers:
 ```python
 nums = [8, 4, 3, 0, 3, 5, 2, 4, 0, 4, 7, 0, 7, 4, 2, 2, 5, 6, 0, 6,
         *, *, *, *, *, *, *, *, *, *, *, *, *, *]
 ```
 
-Now the lengths are ok! finally some python loop to get letters:
+Now the lengths are OK! Finally some python loop to get the letters:
 ```python
 out = ''
 for n, r in zip(nums, rep):
@@ -89,12 +87,12 @@ print out
 # the flag is shaajm of ************.
 ```
 
-At first we tried
+At first we tried:
 ```python
 hashlib.sha256('SHAAJM OF ************').hexdigest()
 ```
 
-then after few trials ('with spaces, without spaces'), we noticed:
+Then after few trials ('with spaces, without spaces'), we noticed:
 ```python
 # shaajm -> sha256
 
