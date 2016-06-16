@@ -36,7 +36,8 @@ In upper left corner we will get encrypted flag.
 After cleaning flag i got image like this:  
 ![solution.png](solution.png)
 
-Picture is size 49x7 and has black pixels on top, for me it looks like vertical written, binary encoded ascii letters. (First is capital because starts with ```10```, next are lower, also we can spot spaces ```0100000```)
+Picture is size 49x7 and has black pixels on top, for me it looks like, vertically written, binary encoded, ascii letters.  
+(First is capital, because starts with ```10```, rest are in lower case ```11``` at the begining, also we can spot spaces ```0100000```)
 
 Let’s try that idea.  
 In this point we could decrypt it by hand in like 5 min, but we are lazy, aren’t we?  
