@@ -3,6 +3,7 @@ Author Pymac(Maciej Pytel)
 # Task: CRC
 
 CTF: Backdoorctf16  
+Link: https://backdoor.sdslabs.co/challenges/CRC  
 Author: IamLupo  
 Points: 250  
 Category: Misc  
