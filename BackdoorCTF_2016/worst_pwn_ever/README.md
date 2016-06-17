@@ -24,7 +24,9 @@ Description
 >   Access: nc hack.bckdr.in 9008
 
 
-## TL;DR
+TL;DR
+-----
+
 We have been given an Python eval jail over a TCP socket.
 The solution is to retreive an environment variable using one
 of the classic builtin hacks, for example:
@@ -32,9 +34,13 @@ of the classic builtin hacks, for example:
 __import__('os').system('env|grep -iE ".*f.*l.*a.*g"')
 ```
 
-## Solution
+
+Solution
+--------
+
 After establishing a connection to the given server a prompt is returned.
-Let's try some random fuzzing...
+Let's try some random fuzzing.
+
 First let's see what happens when we press `CTRL+D`
 right away:
 
@@ -61,6 +67,7 @@ TypeError: can't multiply sequence by non-int of type 'list'
 ```
 Bingo! If it really is an old `eval` jail, then
 we could escape using a classic builtin hacks.
+
 Let's check that:
 ```
 > str(__import__('os').system('echo x'))
