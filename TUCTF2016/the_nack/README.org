@@ -21,7 +21,8 @@ file with the dump of the traffic.
 
 * tl;dr
 
-xxx
+The solution was to extract a GIF image from SYN packets and then split
+it into individual frames.
 
 
 * Solution
