@@ -19,6 +19,11 @@ and we're asked to analyze what it says. Provided is a
 file with the dump of the traffic.
 
 
+* tl;dr
+
+xxx
+
+
 * Solution
 
 This wasn't a particularly hard task if one knows TCP. Short analysis of the
