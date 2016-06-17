@@ -12,7 +12,7 @@ Categories: forensic, network, image
 
 "Mysterious traffic", or in other words, we have a dump of network traffic
 and we're asked to analyze what it says. Provided is a pcap file with the
-dump of traffic.
+dump of the traffic.
 
 
 * Solution
@@ -41,7 +41,7 @@ tshark -r ce6e1a612a1da91648306ace0cf7151e6531abc9.pcapng \
 474f4154014e455453
 474f41540143415045
 474f415401322e3003
-……………
+...
 #+end_example
 As we can easily recognize, the first half of the data field is always =47 4F 41
 54 01=. However, better to verify that:
@@ -56,7 +56,7 @@ tshark -r ce6e1a612a1da91648306ace0cf7151e6531abc9.pcapng \
 474f415401
 #+end_example
 
-So, we have found a common "header". Which coincidentally matches the theme of
+So, we have found a common "header", which coincidentally matches the theme of
 the CTF, saying "=GOAT\x01=". It's time to extract usable data out.
 
 #+begin_src shell
@@ -74,10 +74,10 @@ infamous ROFLcopter:
 #+NAME: fig:roflcopter
 [[./roflcopter.gif]]
 
-Still, no flag, but something blinks in the image.
+Still, no flag, but there definitely is something blinking in the image.
 
-The obvious thing was to check for data hidden in short-lived frame. Let's
-split the gif file into frames:
+The next obvious step was to check the data hidden in the short-lived frame.
+Let's split the gif file into frames:
 
 #+begin_src shell
 convert -coalesce temp out%05d.pgm
@@ -87,5 +87,5 @@ convert -coalesce temp out%05d.pgm
 #+NAME: fig:flag
 [[./out00016.png]]
 
-In the resulting outXXXX.pgm files, we find in file =out00016.pgm=, we find the
-flag: =TUCTF{xxxxxxx CENSORED xxxxxxxxxxxx}=
+Among the resulting =outXXXX.pgm= files, in the 17th frame, we find
+the flag: =TUCTF{xxxxxxx CENSORED xxxxxxxxxxxx}=
