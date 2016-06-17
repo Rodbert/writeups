@@ -76,9 +76,8 @@ tshark -r ce6e1a612a1da91648306ace0cf7151e6531abc9.pcapng \
 #+end_src
 
 Some people might have already noticed that the first packet starts with what
-essentially is the beginning of a GIF header, something confirmed after looking
-over the file with =file= as well image viewer =feh=. The image it shows is the
-infamous ROFLcopter:
+essentially is the beginning of a GIF header. The extracted image is
+the infamous ROFLcopter:
 
 #+CAPTION: ROFLcopter GIF
 #+NAME: fig:roflcopter
