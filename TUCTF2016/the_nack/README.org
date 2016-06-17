@@ -72,7 +72,7 @@ infamous ROFLcopter:
 
 #+CAPTION: ROFLcopter GIF
 #+NAME: fig:roflcopter
-[[./roflcopter.gif]]
+[[img/roflcopter.gif]]
 
 Still, no flag, but there definitely is something blinking in the image.
 
@@ -85,7 +85,7 @@ convert -coalesce temp out%05d.pgm
 
 #+CAPTION: Flag frame
 #+NAME: fig:flag
-[[./out00016.png]]
+[[img/out00016.png]]
 
 Among the resulting =outXXXX.pgm= files, in the 17th frame, we find
 the flag: =TUCTF{xxxxxxx CENSORED xxxxxxxxxxxx}=
