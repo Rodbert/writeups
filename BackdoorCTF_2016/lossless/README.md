@@ -7,7 +7,7 @@ CTF: Backdoorctf16
 Link: https://backdoor.sdslabs.co/challenges/LOSSLESS  
 Author: Arpit Singla  
 Points: 100  
-Category: Stegano, image
+Category: stegano, image
 
 
 Description
