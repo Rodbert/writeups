@@ -51,9 +51,9 @@ With a bit of work in GIMP we end up with the following image:
 ![The solution](img/solution.png)
 
 The data is a 49x7 binary matrix, which looks like vertically written,
-binary encoded, ascii letters. The first one is capital, as it begins with
-`10`, while the others are lower case (begin with `11`). Also we can see
-spaces (`0100000`).
+binary encoded, ascii letters. The first one is a capital letter,
+as it begins with `10`, while the others are lower case letters
+(begin with `11`). Also we can see spaces (`0100000`).
 
 Let's decode the hidden message. We've rotated the image by 90 degrees
 counter-clockwise and exported it in BMP format. Then, treating the image
