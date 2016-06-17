@@ -3,23 +3,25 @@
 
 * Description of task
 
-"Mysterious traffic", or in other words, we have a dump of network traffic and we're asked to analyze what it says.
-Provided is a pcap file with dump of traffic.
+"Mysterious traffic", or in other words, we have a dump of network traffic
+and we're asked to analyze what it says. Provided is a pcap file with the
+dump of traffic.
+
 
 * Solution
 
-This wasn't a particularly hard task if one knows his TCP. Short analysis of the
+This wasn't a particularly hard task if one knows TCP. Short analysis of the
 dump in Wireshark showed that the file contains only SYN and NACK packets, as
 one side constantly tries to connect to a closed port.
 
-Quick look at sample of SYN packets showed that each SYN packet had data
+Quick look at a sample of SYN packets showed that each SYN packet had data
 associated with it (used to be rare, nowadays more popular method of lowering
 latency to first byte). Some quick shell play with tshark gave us the data:
 
 #+begin_src shell
 tshark -r ce6e1a612a1da91648306ace0cf7151e6531abc9.pcapng \
  -Y 'tcp.connection.syn' -T fields -e data
-#+end_src 
+#+end_src
 
 #+begin_example
 474f41540147494638
@@ -48,7 +50,7 @@ tshark -r ce6e1a612a1da91648306ace0cf7151e6531abc9.pcapng \
 #+end_example
 
 So, we have found a common "header". Which coincidentally matches the theme of
-the CTF, saying "=GOAT\x01=". Time to extract usable data out.
+the CTF, saying "=GOAT\x01=". It's time to extract usable data out.
 
 #+begin_src shell
 tshark -r ce6e1a612a1da91648306ace0cf7151e6531abc9.pcapng \
