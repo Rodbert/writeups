@@ -11,11 +11,12 @@ Points: 100
 Categories: forensic, network, image
 
 
-* Description of task
+* Task description
 
 "Mysterious traffic", or in other words, we have a dump of network traffic
-and we're asked to analyze what it says. Provided is a pcap file with the
-dump of the traffic.
+and we're asked to analyze what it says. Provided is a
+[[resources/ce6e1a612a1da91648306ace0cf7151e6531abc9.pcapng.xz][pcap]]
+file with the dump of the traffic.
 
 
 * Solution
