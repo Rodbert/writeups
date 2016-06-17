@@ -32,6 +32,7 @@ Solution
 --------
 
 We are given two images seemingly identical:
+
 ![original](img/original.png)
 and
 ![encrypted.png](img/encrypted.png)
