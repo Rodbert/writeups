@@ -1,21 +1,36 @@
-Author Rodbert(Robert Tomkowski)
+Author: Rodbert (Robert Tomkowski)
 
-# Task: Lossless
+Lossless
+========
+
 CTF: Backdoorctf16  
-Link: https://backdoor.sdslabs.co/challenges/CLUE  
+Link: https://backdoor.sdslabs.co/challenges/LOSSLESS  
 Author: Arpit Singla  
 Points: 100  
-Category: Stegano  
+Category: Stegano, image
 
-Description:  
-> d4rth used his dirty methods to hide a secret in a png file. He is cleverly trying to divert your focus from challenge, but the force is strong with you. Now extract the flag from these images, my young padawan.
-http://hack.bckdr.in/LOSSLESS/original.png
-http://hack.bckdr.in/LOSSLESS/encrypted.png
 
-### TL;DR
-Subtract both images. LSB is changed by 1 in encrypted.png.
+Description
+-----------
 
-### Solution
+>   d4rth used his dirty methods to hide a secret in a png file. He is
+>   cleverly trying to divert your focus from challenge, but the force
+>   is strong with you. Now extract the flag from these images, my young
+>   padawan.
+>
+>   http://hack.bckdr.in/LOSSLESS/original.png
+>   http://hack.bckdr.in/LOSSLESS/encrypted.png
+
+
+TL;DR
+-----
+
+Subtract both images. LSB is changed by 1 in `encrypted.png`.
+
+
+Solution
+--------
+
 We are given two images seemingly identical.
 
 original.png:  
