@@ -88,4 +88,4 @@ convert -coalesce temp out%05d.pgm
 [[./out00016.png]]
 
 In the resulting outXXXX.pgm files, we find in file =out00016.pgm=, we find the
-flag: =TUCTF{xxxxxxxxxxxxxxxxxxxxxxxxxxxxx}=
+flag: =TUCTF{xxxxxxx CENSORED xxxxxxxxxxxx}=
