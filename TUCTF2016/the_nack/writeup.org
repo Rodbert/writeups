@@ -58,10 +58,16 @@ tshark -r ce6e1a612a1da91648306ace0cf7151e6531abc9.pcapng \
  | cut -b 11- | tr -d '\n' | xxd -r -p >temp
 #+end_src
 
-Some people might have already noticed the first packet starts with what is
-essentially beginning of GIF header, something confirmed after looking over the
-file with =file= as well image viewer =feh=. The image it shows is the infamous
-ROFLCOPTER. Still, no flag… but something blinks in the image.
+Some people might have already noticed that the first packet starts with what
+essentially is the beginning of a GIF header, something confirmed after looking
+over the file with =file= as well image viewer =feh=. The image it shows is the
+infamous ROFLcopter:
+
+#+CAPTION: ROFLcopter GIF
+#+NAME: fig:roflcopter
+[[./roflcopter.gif]]
+
+Still, no flag, but something blinks in the image.
 
 The obvious thing was to check for data hidden in short-lived frame. Let's
 split the gif file into frames:
