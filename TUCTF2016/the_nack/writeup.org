@@ -1,5 +1,10 @@
-#+TITLE: Writeup - The Nack
 #+AUTHOR: Paweł Lasek
+#+TITLE: Task: The Nack
+
+CTF: TU CTF 2016
+Points: 100
+Categories: forensic, network, image
+
 
 * Description of task
 
