@@ -32,21 +32,21 @@ Solution
 --------
 
 We are given two images seemingly identical:
-
-original.png: ![img/original.png]
-
-encrypted.png: ![img/encrypted.png]
+![original](img/original.png)
+and
+![encrypted.png](img/encrypted.png)
 
 But when we compare them with imagemagick...
 ```shell
 compare original.png encrypted.png difference.png
 ```
 
-difference.png: ![img/difference.png]
+![The difference between the given images](img/difference.png)
 
 In upper left corner we will get encrypted flag.
 
-After cleaning flag i got image like this: ![solution.png]
+After cleaning flag i got image like this:
+![The solution](img/solution.png)
 
 Picture is size 49x7 and has black pixels on top, for me it looks like, vertically written, binary encoded, ascii letters.  
 (First is capital, because starts with ```10```, rest are in lower case ```11``` at the begining, also we can spot spaces ```0100000```)
