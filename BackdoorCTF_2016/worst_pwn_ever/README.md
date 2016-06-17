@@ -3,10 +3,10 @@ Author: michals (Michał Soczewka)
 WORST-PWN-EVER
 ==============
 
-CTF: BackdoorCTF 2016
-Link: https://backdoor.sdslabs.co/challenges/WORST-PWN-EVER
-Author: Ashish Chaudhary
-Points: 100
+CTF: BackdoorCTF 2016  
+Link: https://backdoor.sdslabs.co/challenges/WORST-PWN-EVER  
+Author: Ashish Chaudhary  
+Points: 100  
 Category: pwn, Python
 
 
