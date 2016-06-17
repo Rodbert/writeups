@@ -32,35 +32,36 @@ Subtract both images. LSB is changed by 1 in `encrypted.png`.
 Solution
 --------
 
-We are given two images seemingly identical:
+We have been given two images, seemingly identical:
 
 ![original](img/original.png)
 and
-![encrypted.png](img/encrypted.png)
+![encrypted](img/encrypted.png)
 
-But when we compare them with imagemagick...
+When compared with ImageMagick, by:
 ```shell
 compare original.png encrypted.png difference.png
 ```
+an encrypted message can be spotted in the upper left corner.
 
 ![The difference between the given images](img/difference.png)
 
-In upper left corner we will get encrypted flag.
-
-After cleaning flag i got image like this:
+With a bit of work in GIMP we end up with the following image:
 
 ![The solution](img/solution.png)
 
-Picture is size 49x7 and has black pixels on top, for me it looks like, vertically written, binary encoded, ascii letters.  
-(First is capital, because starts with ```10```, rest are in lower case ```11``` at the begining, also we can spot spaces ```0100000```)
+The data is a 49x7 binary matrix, which looks like vertically written,
+binary encoded, ascii letters. The first one is capital, as it begins with
+`10`, while the others are lower case (begin with `11`). Also we can see
+spaces (`0100000`).
 
-Let’s try that idea.  
-In this point we could decrypt it by hand in like 5 min, but we are lazy, aren’t we?  
-I turned our encrypted cleaned flag by 90 deegre counter-clockwise and exported it as bmp encoded with 3 bytes.  
-Next we open this image in hex editor, copy image body, paste it to your favorite shell, replace all ```00 00 00``` with ```1```, ```ff ff ff``` with ```0``` and at the end remove spaces.  
-After that, if we want to use some built in magic functions that changes binary to ascii, we need to add leading zeros to every group of seven.
+Let's decode the hidden message. We've rotated the image by 90 degrees
+counter-clockwise and exported it in BMP format. Then, treating the image
+as a data hexdump, we've replaced all `00 00 00` with `1` and all
+`ff ff ff` with 0. Lastly, we've added leading zeros to every group
+of seven bits.
 
-Handy implementation in python 2.7:
+Utilitarian script to transform the data:
 ```python
 data = 'some hexes from image'
 data = data.replace('00 00 00', '1').replace('ff ff ff', '0').replace(' ', '')
@@ -68,4 +69,5 @@ data = ''.join['0' + data[i:i+7] for i in xrange(0, len(data)/7)]
 import binascii
 print binascii.unhexlify('%x' % int(data,2))
 ```
-And the flag is ours, don’t forget to SHA256 it.
+
+The decoded data is printable ASCII string, which happens to be the flag.
