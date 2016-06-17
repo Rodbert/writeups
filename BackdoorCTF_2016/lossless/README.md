@@ -31,25 +31,22 @@ Subtract both images. LSB is changed by 1 in `encrypted.png`.
 Solution
 --------
 
-We are given two images seemingly identical.
+We are given two images seemingly identical:
 
-original.png:  
-![original.png](original.png)
+original.png: ![img/original.png]
 
-encrypted.png:  
-![encrypted.png](encrypted.png)
+encrypted.png: ![img/encrypted.png]
 
-But when we compare them with imagemagick…
+But when we compare them with imagemagick...
 ```shell
 compare original.png encrypted.png difference.png
 ```
-difference.png:  
-![difference.png](difference.png)
+
+difference.png: ![img/difference.png]
 
 In upper left corner we will get encrypted flag.
 
-After cleaning flag i got image like this:  
-![solution.png](solution.png)
+After cleaning flag i got image like this: ![solution.png]
 
 Picture is size 49x7 and has black pixels on top, for me it looks like, vertically written, binary encoded, ascii letters.  
 (First is capital, because starts with ```10```, rest are in lower case ```11``` at the begining, also we can spot spaces ```0100000```)
