@@ -47,6 +47,7 @@ compare original.png encrypted.png difference.png
 In upper left corner we will get encrypted flag.
 
 After cleaning flag i got image like this:
+
 ![The solution](img/solution.png)
 
 Picture is size 49x7 and has black pixels on top, for me it looks like, vertically written, binary encoded, ascii letters.  
