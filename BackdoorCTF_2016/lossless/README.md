@@ -22,7 +22,7 @@ Description
 >   http://hack.bckdr.in/LOSSLESS/encrypted.png
 
 
-TL;DR
+tl;dr
 -----
 
 Subtract both images. LSB is changed by 1 in `encrypted.png`.

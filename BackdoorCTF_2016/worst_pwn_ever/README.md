@@ -24,7 +24,7 @@ Description
 >   Access: nc hack.bckdr.in 9008
 
 
-TL;DR
+tl;dr
 -----
 
 We have been given an Python eval jail over a TCP socket.
