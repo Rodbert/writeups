@@ -1,13 +1,16 @@
-Author michals(Michał Soczewka)
+Author: michals (Michał Soczewka)
 
-#Task: WORST-PWN-EVER
-CTF: Backdoorctf16  
-Link: https://backdoor.sdslabs.co/challenges/WORST-PWN-EVER  
-Author: Ashish Chaudhary  
-Points: 100  
-Category: Python, Pwn  
+WORST-PWN-EVER
+==============
+
+CTF: BackdoorCTF 2016
+Link: https://backdoor.sdslabs.co/challenges/WORST-PWN-EVER
+Author: Ashish Chaudhary
+Points: 100
+Category: pwn, Python
 Description:
 >  tocttou is an enviornmentalist. But some say he has a vicious motive and he uses nature to hide his dark side. We found a weird shell on his amazon (pun inteded) web services. Can you tell us what is he upto? Tip: he might shut down the machine if he notices you - and he will (maybe in 45 seconds). Access: nc hack.bckdr.in 9008
+
 
 ## TL;DR
 We have been given an Python eval jail over a TCP socket.  
