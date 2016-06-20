@@ -10,7 +10,7 @@ Category: Misc
 Description:
 >Vector recorded this audio when Gill Bates was opening his/her vault and Gru stole this recording from him (stealing from a thief ain't a crime, right?). Help Gru decode this message so that he can ...(Use your imagination)
 
-[link to wav file](dtune1.wav)
+[link to wav file](resources/dtune1.wav)
 
 Clue:
 >Message consists of upcase letters.
@@ -63,7 +63,7 @@ Still there was one problem. By listening to the sound we could clearly distingu
 There were 34 vs 36 that I got from the on-line tool.. Hmm, it probably required tones to be in the same intervals and it failed on our sample. So I manually removed all repetitions using Audacity (manual select/remove) and also note down number of repetitions of each sound. I got modified file:
 
 ![Audacious screenshot 1](img2.png)
-[Updated wav file](dtune1.wav)
+[Updated wav file](resources/dtune2.wav)
 
 and numbers of repetitions:
 ```python
