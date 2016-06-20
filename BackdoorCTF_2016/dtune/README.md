@@ -6,7 +6,7 @@ CTF: BackdoorCTF 2016
 Link: https://backdoor.sdslabs.co/challenges/DTUNE  
 Author: Vishrut Kumar Mishra  
 Points: 70  
-Category: forensic, sound  
+Category: forensic, sound
 
 
 Description
@@ -36,7 +36,7 @@ Solution
 
 After listening to the sound, it was clear that it was a touch-tone
 dialing sequence, or more technically -
-[DMTF](https://en.wikipedia.org/wiki/Dual-tone_multi-frequency_signaling)
+[DMTF](https://en.wikipedia.org/wiki/Dual-tone_multi-frequency_signaling).
 In short - it was an encoded sequence of digits.
 
 With [this](http://dialabc.com/sound/detect/) on-line tool we found
@@ -99,3 +99,5 @@ for n, r in zip(nums, rep):
 print out
 ```
 we ended up with the following string: `the flag is shaajm of x CENSORED x.`
+It was pretty easy to notice that `shaajm` in the decoded string is actually
+`sha256`.
