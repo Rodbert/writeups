@@ -67,12 +67,12 @@ string_map = {
 
 Still there was one problem. By listening to the sound we could clearly distinguish that the tones are grouped. Small intervals where separating the same tone (so it had to be repetition of one digit). I was not sure how the on-line tool treated the repeated sounds so I opened the file in Audacity and counted chunks (manually).
 
-![Audacious screenshot 1](img1.png)
+![Audacious screenshot 1](img/img1.png)
 
 
 There were 34 vs 36 that I got from the on-line tool.. Hmm, it probably required tones to be in the same intervals and it failed on our sample. So I manually removed all repetitions using Audacity (manual select/remove) and also note down number of repetitions of each sound. I got modified file:
 
-![Audacious screenshot 1](img2.png)
+![Audacious screenshot 1](img/img2.png)
 [Updated wav file](resources/dtune2.wav)
 
 and numbers of repetitions:
