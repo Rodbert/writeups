@@ -50,7 +50,7 @@ numbers = [8, 4, 3, 0, 3, 5, 2, 4, 0, 4, 7, 7, 0, 7, 4, 4, 2, 2,
 One of the ideas we came up with was a DTMF encoded session of old-style
 SMS writing.
 
-![keyboard](http://www.yorku.ca/mack/chapter5-f2.jpg)
+![keyboard](img/keyboard.jpg)
 
 We've created this mapping:
 ```python
