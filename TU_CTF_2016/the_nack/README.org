@@ -1,0 +1,100 @@
+#+AUTHOR: Paweł Lasek
+#+TITLE: The Nack
+
+CTF: TU CTF 2016
+
+Link: [[http://ctf.asciioverflow.com]] (unfortunately, the tasks are
+not reachable on the organiser's website at the moment)
+
+Points: 100
+
+Categories: forensic, network, image
+
+
+* Task description
+
+"Mysterious traffic", or in other words, we have a dump of network traffic
+and we're asked to analyze what it says. Provided is a
+[[resources/ce6e1a612a1da91648306ace0cf7151e6531abc9.pcapng.xz][pcap]]
+file with the dump of the traffic.
+
+
+* tl;dr
+
+The solution was to extract a GIF image from SYN packets' data and then
+split it into individual frames.
+
+
+* Solution
+
+This wasn't a particularly hard task if one knows TCP. Short analysis of the
+dump in Wireshark showed that the file contains only SYN and NACK packets, as
+one side constantly tries to connect to a closed port.
+
+Quick look at a sample of SYN packets showed that each SYN packet had data
+associated with it (used to be rare, nowadays more popular method of lowering
+latency to first byte). Some quick shell play with tshark gave us the data:
+
+#+begin_src shell
+tshark -r ce6e1a612a1da91648306ace0cf7151e6531abc9.pcapng \
+ -Y 'tcp.connection.syn' -T fields -e data
+#+end_src
+
+#+begin_example
+474f41540147494638
+474f41540139614e02
+474f415401e100a100
+474f41540100ffffff
+474f415401000000ff
+474f415401ffffffff
+474f415401ff21ff0b
+474f4154014e455453
+474f41540143415045
+474f415401322e3003
+...
+#+end_example
+As we can easily recognize, the first half of the data field is always =47 4F 41
+54 01=. However, better to verify that:
+
+#+begin_src shell
+tshark -r ce6e1a612a1da91648306ace0cf7151e6531abc9.pcapng \
+ -Y 'tcp.connection.syn' -T fields -e data \
+ | cut -b -10 | uniq
+#+end_src
+
+#+begin_example
+474f415401
+#+end_example
+
+So, we have found a common "header", which coincidentally matches the theme of
+the CTF, saying "=GOAT\x01=". It's time to extract usable data out.
+
+#+begin_src shell
+tshark -r ce6e1a612a1da91648306ace0cf7151e6531abc9.pcapng \
+ -Y 'tcp.connection.syn' -T fields -e data \
+ | cut -b 11- | tr -d '\n' | xxd -r -p >temp
+#+end_src
+
+Some people might have already noticed that the first packet starts with what
+essentially is the beginning of a GIF header. The extracted image is
+the infamous ROFLcopter:
+
+#+CAPTION: ROFLcopter GIF
+#+NAME: fig:roflcopter
+[[img/roflcopter.gif]]
+
+Still, no flag, but there definitely is something blinking in the image.
+
+The next obvious step was to check the data hidden in the short-lived frame.
+Let's split the gif file into frames:
+
+#+begin_src shell
+convert -coalesce temp out%05d.pgm
+#+end_src
+
+#+CAPTION: Flag frame
+#+NAME: fig:flag
+[[img/out00016.png]]
+
+Among the resulting =outXXXX.pgm= files, in the 17th frame, we find
+the flag: =TUCTF{xxxxxxx CENSORED xxxxxxxxxxxx}=
