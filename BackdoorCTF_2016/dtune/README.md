@@ -91,11 +91,11 @@ nums = [8, 4, 3, 0, 3, 5, 2, 4, 0, 4, 7, 0, 7, 4, 2, 2, 5, 6, 0, 6,
         *, *, *, *, *, *, *, *, *, *, *, *, *, *]
 ```
 
-Finally, after zipping the lists and decoding with:
+Finally, after zipping the lists and decoding the message with:
 ```python
 out = ''
 for n, r in zip(nums, rep):
    out+= string_map[n][r - 1]
 print out
 ```
-We ended up with the following string: `the flag is shaajm of x CENSORED x.`
+we ended up with the following string: `the flag is shaajm of x CENSORED x.`
