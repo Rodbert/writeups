@@ -1,27 +1,37 @@
 Author: doubleloop (Jakub Łuczyński)
 
-# Task: dTune
+# DTUNE
 
-CTF: Backdoorctf16  
+CTF: BackdoorCTF 2016  
 Link: https://backdoor.sdslabs.co/challenges/DTUNE  
 Author: Vishrut Kumar Mishra  
 Points: 70  
-Category: Misc  
-Description:
->Vector recorded this audio when Gill Bates was opening his/her vault and Gru stole this recording from him (stealing from a thief ain't a crime, right?). Help Gru decode this message so that he can ...(Use your imagination)
+Category: forensic, sound  
+
+
+Description
+-----------
+
+>   Vector recorded this audio when Gill Bates was opening his/her vault
+>   and Gru stole this recording from him (stealing from a thief ain't
+>   a crime, right?). Help Gru decode this message so that he can
+>   ...(Use your imagination)
+>
+>   Clue:
+>   Message consists of upcase letters.
 
 [link to wav file](resources/dtune1.wav)
 
-Clue:
->Message consists of upcase letters.
 
-## TL;DR
+tl;dr
+-----
 
 Provided file contains recording of tones in DTMF format. It is possible to decode it
 with help of some online tools and some sound editing program (like Audacious)
 
 
-## Solution
+Solution
+--------
 
 After listening the sound, it was clear that it contains telephone sounds.
 Couple minutes of googling and we found the description of DTMF -
