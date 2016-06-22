@@ -20,7 +20,7 @@ Description
 >   Clue:
 >   Message consists of upcase letters.
 
-[recording](resources/dtune1.flac)
+[recording](resources/dtune1.wav.xz)
 
 
 tl;dr
@@ -78,7 +78,7 @@ and merged them into single digits.
 
 ![modified file](img/img2.png)
 
-[modified file](resources/dtune2.flac)
+[modified file](resources/dtune2.wav.xz)
 
 These are the repetitions we have counted:
 ```python
